@@ -1,9 +1,0 @@
-book_filename: "index.Rmd"
-title: "Rachel Breuer portfolio"
-author: "Rachel Breuer"
-date: "`r Sys.Date()`"
-output:
-  bookdown::gitbook:
-    css: "bootstrap.css"
-    config:
-      theme: "jelly-theme"
