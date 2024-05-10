@@ -1,2 +1,1 @@
-Dit is de repository van het website https://raechlll.github.io/. Het website bevat Github pages van de portfolio. De files van portfolio komen oorspronkelijk van de repository "portfolio" die verwerkt worden in repository "book". 
-In het website zijn de volgende punten te vinden: CV, toekomstplannen.
+Hierin staan de files en html bestanden voor de bookdown website https://raechlll.github.io/. Het website bevat github pages die gekopieerd is van de  repository "portfolio". De gekopieerde files worden zodanig aangepast, zodat het gekopieerd wordt naar de repository "raechlll.github.io". 
