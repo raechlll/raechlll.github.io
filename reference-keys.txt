@@ -1,2 +1,9 @@
+fig:unnamed-chunk-2
+fig:unnamed-chunk-4
 personal-profile
 survival-package
+c.-elegans-plate-experiment
+importeren-en-inspecteren
+scatterplot
+normalized-data
+scatterplot-normalized-data
