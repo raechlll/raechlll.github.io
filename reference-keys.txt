@@ -12,3 +12,6 @@ importeren-en-inspecteren
 scatterplot
 normalized-data
 scatterplot-normalized-data
+open-peer-review
+introduction
+repita-criteria
