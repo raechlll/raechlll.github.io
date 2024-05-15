@@ -168,6 +168,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.1" data-path="open-peer-review.html"><a href="open-peer-review.html#introduction"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
 <li class="chapter" data-level="5.2" data-path="open-peer-review.html"><a href="open-peer-review.html#repita-criteria"><i class="fa fa-check"></i><b>5.2</b> ‘Repita’-criteria</a></li>
+<li class="chapter" data-level="5.3" data-path="open-peer-review.html"><a href="open-peer-review.html#r-code"><i class="fa fa-check"></i><b>5.3</b> R code</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="open-peer-review.html"><a href="open-peer-review.html#review"><i class="fa fa-check"></i><b>5.3.1</b> Review</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a target="blank">Published with bookdown</a></li>
@@ -355,7 +359,31 @@ Het artikel wordt gescoord met behulp van de ‘Repita’-criteria. Door gebruik
 </tr>
 </tbody>
 </table>
+</div>
+<div id="r-code" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> R code<a href="open-peer-review.html#r-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Naast een wetenschappelijke artikel, wordt ook de reproduceerbaarheid van R code papers beoordeelt. In deze review maken we gebruik van het onderzoek van Haley E. Kragness en Laura Cirelli (2022) over het gedrag van baby’s om verschillende aspecten, interacties en emotionele reacties tijdens muzikaal concert. Hiervoor wordt er gebruik gemaakt van dit artikel, genaamd <a href="https://osf.io/4pqx9/">“A concert for babies: Attentional, affective, and motor responses in an infant audience”</a>.</p>
+<p>Na het bestuderen van het script lijkt het er inderdaad op dat het gaat om een onderzoeksanalyse naar associaties tussen verschillende aspecten tijdens het afspelen van muziek. Het voert statistische analyses uit, zoals correlatietests, en genereert visualisaties.
+Op schaal van 1(very bad)-5(very good), zou ik het script een 4 geven op basis van leesbaarheid. De codes zijn over het algemeen leesbaar, goed gestructureerd en georganiseerd met comments, maar er kunnen meer comments komen die ook meer uitleggen over de codes.</p>
+<div id="review" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Review<a href="open-peer-review.html#review" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Bij het runnen van het script maar ik tegen aantal kleine errors tegen. Bij het inladen van de data miste er een pad in de set working directory funtie. Dit werd vervolgens verwezen naar de folder ‘les4’. Bij de chunk <strong>Demographics</strong> werden de kolommen <strong>Gender</strong> en <strong>BabyMusiClass</strong> niet gevonden als object voor het tellen in de dataframe <strong>df.wide</strong>. <strong>BabyMusiClass</strong> heb ik aangepast naar <strong>df.wide$ BabyMusiClass</strong>. De kolom <strong>Gender</strong> is character en niet een factor, waardoor het tellen moeilijk gaat. Dit heb ik aangepast naar <strong>table(df.wide$Gender)</strong>, zodat je in console de aantallen geslacht te zien krijgt.</p>
+<p>Op schaal van 1(very bad)-5(very good), zou ik het script een 4 geven op basis van reproduceerbaarheid. De codes die aangepast moesten worden, waren gemakkelijk op te lossen en begrijpelijk, zoals het verwijzen naar een pad/map. De visualisaties werden als png-bestanden geleverd en de vereiste librarys staan aan het begin van het markdown-bestand.</p>
+<p>Hieronder zie je een stukje van het script voor het genereren van een geom_density plot. Dit plot verdient een score van 5 voor reproduceerbaarheid.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="open-peer-review.html#cb14-1" tabindex="-1"></a><span class="fu">png</span>(<span class="st">&quot;attentionDensity.png&quot;</span>, <span class="at">units=</span><span class="st">&quot;in&quot;</span>, <span class="at">width=</span><span class="dv">5</span>, <span class="at">height=</span><span class="dv">5</span>, <span class="at">res=</span><span class="dv">300</span>)</span>
+<span id="cb14-2"><a href="open-peer-review.html#cb14-2" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="open-peer-review.html#cb14-3" tabindex="-1"></a>dens.perc <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(BabyAttShow.Prop,<span class="at">fill =</span> SongCond, <span class="at">linetype=</span>IntCond),..scaled..) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="sc">+</span><span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb14-4"><a href="open-peer-review.html#cb14-4" tabindex="-1"></a>    <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;solid&quot;</span>, <span class="st">&quot;dashed&quot;</span>))<span class="sc">+</span></span>
+<span id="cb14-5"><a href="open-peer-review.html#cb14-5" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;plum4&quot;</span>,<span class="st">&quot;seagreen3&quot;</span>))<span class="sc">+</span></span>
+<span id="cb14-6"><a href="open-peer-review.html#cb14-6" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Proportion of epochs containing looks to show&quot;</span>)<span class="sc">+</span></span>
+<span id="cb14-7"><a href="open-peer-review.html#cb14-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Kernel density&quot;</span>)<span class="sc">+</span></span>
+<span id="cb14-8"><a href="open-peer-review.html#cb14-8" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb14-9"><a href="open-peer-review.html#cb14-9" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="open-peer-review.html#cb14-10" tabindex="-1"></a>dens.perc</span>
+<span id="cb14-11"><a href="open-peer-review.html#cb14-11" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
+<p><img src="images/attentionDensity.png" width="60%" /></p>
 
+</div>
 </div>
 </div>
             </section>
