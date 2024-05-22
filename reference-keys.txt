@@ -20,3 +20,8 @@ introduction
 repita-criteria
 r-code
 review
+r-packages-package.rb
+installatie
+gebruik
+functies
+voorbeeld
