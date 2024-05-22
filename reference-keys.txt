@@ -2,11 +2,13 @@ fig:unnamed-chunk-2
 fig:unnamed-chunk-4
 fig:unnamed-chunk-5
 fig:unnamed-chunk-6
-fig:unnamed-chunk-9
-fig:unnamed-chunk-11
+fig:unnamed-chunk-10
+fig:unnamed-chunk-12
 personal-profile
 survival-package
 guerrilla-analytics-principles
+introductie
+portfolio-framework
 c.-elegans-plate-experiment
 importeren-en-inspecteren
 scatterplot

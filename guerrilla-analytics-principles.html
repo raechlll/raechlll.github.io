@@ -143,7 +143,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Demo Book</a></li>
+<li><a href="./">Portfolio Rachel Breuer</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introductie</a></li>
@@ -154,7 +154,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="personal-profile.html"><a href="personal-profile.html#additional-experience"><i class="fa fa-check"></i>Additional experience</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="survival-package.html"><a href="survival-package.html"><i class="fa fa-check"></i><b>2</b> Survival package</a></li>
-<li class="chapter" data-level="3" data-path="guerrilla-analytics-principles.html"><a href="guerrilla-analytics-principles.html"><i class="fa fa-check"></i><b>3</b> Guerrilla Analytics Principles</a></li>
+<li class="chapter" data-level="3" data-path="guerrilla-analytics-principles.html"><a href="guerrilla-analytics-principles.html"><i class="fa fa-check"></i><b>3</b> Guerrilla Analytics Principles</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="guerrilla-analytics-principles.html"><a href="guerrilla-analytics-principles.html#introductie"><i class="fa fa-check"></i><b>3.1</b> Introductie</a></li>
+<li class="chapter" data-level="3.2" data-path="guerrilla-analytics-principles.html"><a href="guerrilla-analytics-principles.html#portfolio-framework"><i class="fa fa-check"></i><b>3.2</b> Portfolio framework</a></li>
+</ul></li>
 <li class="chapter" data-level="4" data-path="c.-elegans-plate-experiment.html"><a href="c.-elegans-plate-experiment.html"><i class="fa fa-check"></i><b>4</b> C. elegans plate experiment</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="c.-elegans-plate-experiment.html"><a href="c.-elegans-plate-experiment.html#importeren-en-inspecteren"><i class="fa fa-check"></i><b>4.1</b> Importeren en inspecteren</a></li>
@@ -195,7 +199,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="guerrilla-analytics-principles" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">3</span> Guerrilla Analytics Principles<a href="guerrilla-analytics-principles.html#guerrilla-analytics-principles" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>uitleg</p>
+<div id="introductie" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Introductie<a href="guerrilla-analytics-principles.html#introductie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Guerrilla Analytics Principles zijn richtlijnen die helpen om data snel en flexibel te analyseren en de workflow te verbeteren. In deze hoofdstuk gebruiken we het Guerrilla Analytics-framework, zoals uitgelegd door Enda Ridge in zijn boekje. Dit framework biedt een praktische en hands-on benadering voor het opzetten van een datamanagementproces dat zowel individueel als in teamverband effectief is.
+Hieronder wordt een voorbeeld gegeven van de principe met DAUR-II assignments:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="guerrilla-analytics-principles.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
 <span id="cb1-2"><a href="guerrilla-analytics-principles.html#cb1-2" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="guerrilla-analytics-principles.html#cb1-3" tabindex="-1"></a><span class="co"># Showing framework of RNA-sequence </span></span>
@@ -204,7 +211,6 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-6"><a href="guerrilla-analytics-principles.html#cb1-6" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;daur2/Metagenomics&quot;</span>))</span>
 <span id="cb1-7"><a href="guerrilla-analytics-principles.html#cb1-7" tabindex="-1"></a><span class="co"># Showing framework of ONECUT1 </span></span>
 <span id="cb1-8"><a href="guerrilla-analytics-principles.html#cb1-8" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;daur2/Eindopdracht&quot;</span>))</span></code></pre></div>
-text
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
 <img src="images/RNA-tree.png" alt="Folder tree RNA-sequence. De folder tree van RNA-sequence uit DAUR2 is gebaseerd op de Guerrilla Analytics Principle." width="60%" />
 <p class="caption">
@@ -225,7 +231,110 @@ Figure 3.2: Folder tree Metagenomics. De folder tree van Metagenomics uit DAUR2 
 Figure 3.3: Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht van DAUR2 is gebaseerd op de Guerrilla Analytics Principle.
 </p>
 </div>
+</div>
+<div id="portfolio-framework" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Portfolio framework<a href="guerrilla-analytics-principles.html#portfolio-framework" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<pre><code>## C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/book
+## ├── 02_CV.Rmd
+## ├── 03_Kaplan-Meier.Rmd
+## ├── 04_Guerrilla.Rmd
+## ├── 05_Elegans.Rmd
+## ├── 06_Review.Rmd
+## ├── bookdown.Rproj
+## ├── images
+## │   ├── attentionDensity.png
+## │   ├── Eind-tree.png
+## │   ├── favicon32x32.png
+## │   ├── Meta-tree.png
+## │   ├── RNA-tree.png
+## │   └── survival_curve.png
+## ├── index.Rmd
+## ├── LICENSE
+## ├── README.md
+## ├── style.css
+## ├── _book
+## │   ├── 404.html
+## │   ├── additional-experience.html
+## │   ├── c.-elegans-plate-experiment.html
+## │   ├── cv.html
+## │   ├── Eind-tree.png
+## │   ├── experience.html
+## │   ├── favicon-32x32.png
+## │   ├── favicon32x32.png
+## │   ├── guerrilla-analytics-principles.html
+## │   ├── images
+## │   │   ├── attentionDensity.png
+## │   │   ├── Eind-tree.png
+## │   │   ├── Meta-tree.png
+## │   │   ├── RNA-tree.png
+## │   │   └── survival_curve.png
+## │   ├── index.html
+## │   ├── libs
+## │   │   ├── anchor-sections-1.1.0
+## │   │   │   ├── anchor-sections-hash.css
+## │   │   │   ├── anchor-sections.css
+## │   │   │   └── anchor-sections.js
+## │   │   ├── core-js-2.5.3
+## │   │   │   └── shim.min.js
+## │   │   ├── gitbook-2.6.7
+## │   │   │   ├── css
+## │   │   │   │   ├── fontawesome
+## │   │   │   │   │   └── fontawesome-webfont.ttf
+## │   │   │   │   ├── plugin-bookdown.css
+## │   │   │   │   ├── plugin-clipboard.css
+## │   │   │   │   ├── plugin-fontsettings.css
+## │   │   │   │   ├── plugin-highlight.css
+## │   │   │   │   ├── plugin-search.css
+## │   │   │   │   ├── plugin-table.css
+## │   │   │   │   └── style.css
+## │   │   │   └── js
+## │   │   │       ├── app.min.js
+## │   │   │       ├── clipboard.min.js
+## │   │   │       ├── jquery.highlight.js
+## │   │   │       ├── plugin-bookdown.js
+## │   │   │       ├── plugin-clipboard.js
+## │   │   │       ├── plugin-fontsettings.js
+## │   │   │       ├── plugin-search.js
+## │   │   │       └── plugin-sharing.js
+## │   │   ├── htmltools-fill-0.5.8.1
+## │   │   │   └── fill.css
+## │   │   ├── htmlwidgets-1.6.4
+## │   │   │   └── htmlwidgets.js
+## │   │   ├── jquery-3.6.0
+## │   │   │   └── jquery-3.6.0.min.js
+## │   │   ├── react-18.2.0
+## │   │   │   ├── react-dom.min.js
+## │   │   │   └── react.min.js
+## │   │   ├── reactable-0.4.4
+## │   │   │   └── reactable.css
+## │   │   ├── reactable-binding-0.4.4
+## │   │   │   └── reactable.js
+## │   │   └── reactwidget-1.0.0
+## │   │       └── react-tools.js
+## │   ├── Meta-tree.png
+## │   ├── open-peer-review.html
+## │   ├── personal-profile.html
+## │   ├── RNA-tree.png
+## │   ├── search_index.json
+## │   ├── style.css
+## │   ├── survival-package.html
+## │   ├── survival_curve.png
+## │   └── _main_files
+## │       └── figure-html
+## │           ├── unnamed-chunk-10-1.png
+## │           ├── unnamed-chunk-11-1.png
+## │           ├── unnamed-chunk-12-1.png
+## │           └── unnamed-chunk-9-1.png
+## ├── _main.Rmd
+## ├── _main_files
+## │   └── figure-html
+## │       ├── unnamed-chunk-10-1.png
+## │       ├── unnamed-chunk-11-1.png
+## │       ├── unnamed-chunk-12-1.png
+## │       └── unnamed-chunk-9-1.png
+## └── _output.yml</code></pre>
 
+</div>
 </div>
             </section>
 
