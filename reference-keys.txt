@@ -10,6 +10,7 @@ guerrilla-analytics-principles
 introductie
 portfolio-framework
 c.-elegans-plate-experiment
+stappenplan
 importeren-en-inspecteren
 scatterplot
 normalized-data
