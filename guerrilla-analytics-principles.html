@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="3 Guerrilla Analytics Principles | Portfolio" />
   <meta property="og:type" content="book" />
-  <meta property="og:image" content="/favicon32x32.png" />
+  
   <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="3 Guerrilla Analytics Principles | Portfolio" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
-  <meta name="twitter:image" content="/favicon32x32.png" />
+  
 
 <meta name="author" content="Rachel Breuer" />
 
@@ -51,6 +51,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/core-js-2.5.3/shim.min.js"></script>
 <script src="libs/react-18.2.0/react.min.js"></script>
 <script src="libs/react-18.2.0/react-dom.min.js"></script>
@@ -129,6 +131,29 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
   
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -185,9 +210,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="r-packages-package.html"><a href="r-packages-package.html#functies"><i class="fa fa-check"></i><b>6.3</b> Functies</a></li>
 <li class="chapter" data-level="6.4" data-path="r-packages-package.html"><a href="r-packages-package.html#voorbeeld"><i class="fa fa-check"></i><b>6.4</b> Voorbeeld</a></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="project-antimicrobiële-resistentie.html"><a href="project-antimicrobiële-resistentie.html"><i class="fa fa-check"></i><b>7</b> Project antimicrobiële resistentie</a></li>
 <li class="divider"></li>
 <li><a target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -209,7 +234,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">3</span> Guerrilla Analytics Principles<a href="guerrilla-analytics-principles.html#guerrilla-analytics-principles" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="introductie" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Introductie<a href="guerrilla-analytics-principles.html#introductie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Guerrilla Analytics Principles zijn richtlijnen die helpen om data snel en flexibel te analyseren en de workflow te verbeteren. In deze hoofdstuk gebruiken we het Guerrilla Analytics-framework, zoals uitgelegd door Enda Ridge in zijn boekje. Dit framework biedt een praktische en hands-on benadering voor het opzetten van een datamanagementproces dat zowel individueel als in teamverband effectief is.
+<p>Guerrilla Analytics Principles zijn richtlijnen die helpen om data snel en flexibel te analyseren en de workflow te verbeteren. In deze hoofdstuk gebruiken we het Guerrilla Analytics-framework, zoals uitgelegd door Enda Ridge. Dit framework biedt een praktische en hands-on benadering voor het opzetten van een datamanagementproces dat zowel individueel als in teamverband effectief is.
 Hieronder wordt een voorbeeld gegeven van de principe met DAUR-II assignments:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="guerrilla-analytics-principles.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
 <span id="cb1-2"><a href="guerrilla-analytics-principles.html#cb1-2" tabindex="-1"></a></span>
@@ -219,21 +244,21 @@ Hieronder wordt een voorbeeld gegeven van de principe met DAUR-II assignments:</
 <span id="cb1-6"><a href="guerrilla-analytics-principles.html#cb1-6" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;daur2/Metagenomics&quot;</span>))</span>
 <span id="cb1-7"><a href="guerrilla-analytics-principles.html#cb1-7" tabindex="-1"></a><span class="co"># Showing framework of ONECUT1 </span></span>
 <span id="cb1-8"><a href="guerrilla-analytics-principles.html#cb1-8" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;daur2/Eindopdracht&quot;</span>))</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
 <img src="images/RNA-tree.png" alt="Folder tree RNA-sequence. De folder tree van RNA-sequence uit DAUR2 is gebaseerd op de Guerrilla Analytics Principle." width="60%" />
 <p class="caption">
 Figure 3.1: Folder tree RNA-sequence. De folder tree van RNA-sequence uit DAUR2 is gebaseerd op de Guerrilla Analytics Principle.
 </p>
 </div>
 <br/><br/>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
 <img src="images/Meta-tree.png" alt="Folder tree Metagenomics. De folder tree van Metagenomics uit DAUR2 is gebaseerd op de Guerrilla Analytics Principle." width="60%" />
 <p class="caption">
 Figure 3.2: Folder tree Metagenomics. De folder tree van Metagenomics uit DAUR2 is gebaseerd op de Guerrilla Analytics Principle.
 </p>
 </div>
 <br/><br/>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
 <img src="images/Eind-tree.png" alt="Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht van DAUR2 is gebaseerd op de Guerrilla Analytics Principle." width="60%" />
 <p class="caption">
 Figure 3.3: Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht van DAUR2 is gebaseerd op de Guerrilla Analytics Principle.
@@ -250,6 +275,7 @@ Figure 3.3: Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht 
 ## ├── 06_Review.Rmd
 ## ├── 07_Package.Rmd
 ## ├── bookdown.Rproj
+## ├── citations.bib
 ## ├── images
 ## │   ├── attentionDensity.png
 ## │   ├── Eind-tree.png
@@ -258,6 +284,7 @@ Figure 3.3: Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht 
 ## │   ├── RNA-tree.png
 ## │   └── survival_curve.png
 ## ├── index.Rmd
+## ├── introduction.Rmd
 ## ├── LICENSE
 ## ├── README.md
 ## ├── style.css
@@ -278,6 +305,7 @@ Figure 3.3: Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht 
 ## │   │   ├── RNA-tree.png
 ## │   │   └── survival_curve.png
 ## │   ├── index.html
+## │   ├── inleiding.html
 ## │   ├── libs
 ## │   │   ├── anchor-sections-1.1.0
 ## │   │   │   ├── anchor-sections-hash.css
@@ -285,6 +313,21 @@ Figure 3.3: Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht 
 ## │   │   │   └── anchor-sections.js
 ## │   │   ├── core-js-2.5.3
 ## │   │   │   └── shim.min.js
+## │   │   ├── crosstalk-1.2.1
+## │   │   │   ├── css
+## │   │   │   │   └── crosstalk.min.css
+## │   │   │   └── js
+## │   │   │       └── crosstalk.min.js
+## │   │   ├── datatables-binding-0.33
+## │   │   │   └── datatables.js
+## │   │   ├── datatables-css-0.0.0
+## │   │   │   └── datatables-crosstalk.css
+## │   │   ├── dt-core-1.13.6
+## │   │   │   ├── css
+## │   │   │   │   ├── jquery.dataTables.extra.css
+## │   │   │   │   └── jquery.dataTables.min.css
+## │   │   │   └── js
+## │   │   │       └── jquery.dataTables.min.js
 ## │   │   ├── gitbook-2.6.7
 ## │   │   │   ├── css
 ## │   │   │   │   ├── fontawesome
@@ -311,6 +354,10 @@ Figure 3.3: Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht 
 ## │   │   │   └── htmlwidgets.js
 ## │   │   ├── jquery-3.6.0
 ## │   │   │   └── jquery-3.6.0.min.js
+## │   │   ├── kePrint-0.0.1
+## │   │   │   └── kePrint.js
+## │   │   ├── lightable-0.0.1
+## │   │   │   └── lightable.css
 ## │   │   ├── react-18.2.0
 ## │   │   │   ├── react-dom.min.js
 ## │   │   │   └── react.min.js
@@ -323,9 +370,12 @@ Figure 3.3: Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht 
 ## │   ├── Meta-tree.png
 ## │   ├── open-peer-review.html
 ## │   ├── personal-profile.html
+## │   ├── project-antimicrobiële-resistentie.html
+## │   ├── r-packages-package.html
 ## │   ├── r-packages.html
 ## │   ├── RNA-tree.png
 ## │   ├── search_index.json
+## │   ├── section-id.html
 ## │   ├── style.css
 ## │   ├── survival-package.html
 ## │   ├── survival_curve.png
@@ -334,6 +384,7 @@ Figure 3.3: Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht 
 ## │           ├── unnamed-chunk-10-1.png
 ## │           ├── unnamed-chunk-11-1.png
 ## │           ├── unnamed-chunk-12-1.png
+## │           ├── unnamed-chunk-13-1.png
 ## │           └── unnamed-chunk-9-1.png
 ## ├── _bookdown_files
 ## ├── _main.Rmd
@@ -342,6 +393,7 @@ Figure 3.3: Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht 
 ## │       ├── unnamed-chunk-10-1.png
 ## │       ├── unnamed-chunk-11-1.png
 ## │       ├── unnamed-chunk-12-1.png
+## │       ├── unnamed-chunk-13-1.png
 ## │       └── unnamed-chunk-9-1.png
 ## └── _output.yml</code></pre>
 
