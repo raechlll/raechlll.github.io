@@ -178,10 +178,23 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="personal-profile.html"><a href="personal-profile.html#experience"><i class="fa fa-check"></i>Experience</a></li>
 <li class="chapter" data-level="" data-path="personal-profile.html"><a href="personal-profile.html#additional-experience"><i class="fa fa-check"></i>Additional experience</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="survival-package.html"><a href="survival-package.html"><i class="fa fa-check"></i><b>2</b> Survival package</a></li>
+<li class="chapter" data-level="2" data-path="survival-package.html"><a href="survival-package.html"><i class="fa fa-check"></i><b>2</b> Survival package</a>
+<ul>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#introductie"><i class="fa fa-check"></i>Introductie</a></li>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#dataset"><i class="fa fa-check"></i>Dataset</a>
+<ul>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#metadata"><i class="fa fa-check"></i>Metadata</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#kaplan-meier"><i class="fa fa-check"></i>Kaplan-Meier</a>
+<ul>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#kaplan-meier-geslacht"><i class="fa fa-check"></i>Kaplan-Meier geslacht</a></li>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#kaplan-meier-leeftijd"><i class="fa fa-check"></i>Kaplan-Meier leeftijd</a></li>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#log-rank-test-op-rokers"><i class="fa fa-check"></i>Log-rank test op rokers</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="guerrilla-analytics-principles.html"><a href="guerrilla-analytics-principles.html"><i class="fa fa-check"></i><b>3</b> Guerrilla Analytics Principles</a>
 <ul>
-<li class="chapter" data-level="" data-path="guerrilla-analytics-principles.html"><a href="guerrilla-analytics-principles.html#introductie"><i class="fa fa-check"></i>Introductie</a></li>
+<li class="chapter" data-level="" data-path="guerrilla-analytics-principles.html"><a href="guerrilla-analytics-principles.html#introductie-1"><i class="fa fa-check"></i>Introductie</a></li>
 <li class="chapter" data-level="" data-path="guerrilla-analytics-principles.html"><a href="guerrilla-analytics-principles.html#portfolio-framework"><i class="fa fa-check"></i>Portfolio framework</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="c.-elegans-plate-experiment.html"><a href="c.-elegans-plate-experiment.html"><i class="fa fa-check"></i><b>4</b> C. elegans plate experiment</a>
@@ -212,7 +225,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="project-antimicrobiële-resistentie.html"><a href="project-antimicrobiële-resistentie.html"><i class="fa fa-check"></i><b>7</b> Project antimicrobiële resistentie</a>
 <ul>
-<li class="chapter" data-level="" data-path="project-antimicrobiële-resistentie.html"><a href="project-antimicrobiële-resistentie.html#introductie-1"><i class="fa fa-check"></i>Introductie</a></li>
+<li class="chapter" data-level="" data-path="project-antimicrobiële-resistentie.html"><a href="project-antimicrobiële-resistentie.html#introductie-2"><i class="fa fa-check"></i>Introductie</a></li>
 <li class="chapter" data-level="" data-path="project-antimicrobiële-resistentie.html"><a href="project-antimicrobiële-resistentie.html#antimicrobiële-resistentie"><i class="fa fa-check"></i>Antimicrobiële resistentie</a></li>
 <li class="chapter" data-level="" data-path="project-antimicrobiële-resistentie.html"><a href="project-antimicrobiële-resistentie.html#r-shiny-app"><i class="fa fa-check"></i>R shiny-app</a></li>
 </ul></li>
@@ -326,23 +339,23 @@ Met <strong>package.rb</strong> kun je eenvoudig metingen omzetten tussen versch
 <div id="voorbeeld" class="section level2 unnumbered hasAnchor">
 <h2>Voorbeeld<a href="r-packages-package.html#voorbeeld" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Hier is een voorbeeld van hoe je <strong>package.rb</strong> kunt gebruiken om zowel metingen om te zetten als molberekeningen uit te voeren:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="r-packages-package.html#cb16-1" tabindex="-1"></a><span class="fu">library</span>(package.rb)</span>
-<span id="cb16-2"><a href="r-packages-package.html#cb16-2" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="r-packages-package.html#cb16-3" tabindex="-1"></a><span class="co"># Example: Convert temperature from Celsius to Kelvin</span></span>
-<span id="cb16-4"><a href="r-packages-package.html#cb16-4" tabindex="-1"></a><span class="fu">rb_temperature</span>(<span class="dv">20</span>, <span class="at">from =</span> <span class="st">&quot;C&quot;</span>, <span class="at">to =</span> <span class="st">&quot;K&quot;</span>)</span>
-<span id="cb16-5"><a href="r-packages-package.html#cb16-5" tabindex="-1"></a><span class="co">#&gt; [1] 293.15</span></span>
-<span id="cb16-6"><a href="r-packages-package.html#cb16-6" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="r-packages-package.html#cb16-7" tabindex="-1"></a><span class="co"># Example: Convert length from centimeters to meters</span></span>
-<span id="cb16-8"><a href="r-packages-package.html#cb16-8" tabindex="-1"></a><span class="fu">rb_length</span>(<span class="dv">150</span>, <span class="at">from =</span> <span class="st">&quot;cm&quot;</span>, <span class="at">to =</span> <span class="st">&quot;m&quot;</span>)</span>
-<span id="cb16-9"><a href="r-packages-package.html#cb16-9" tabindex="-1"></a><span class="co">#&gt; [1] 1.5</span></span>
-<span id="cb16-10"><a href="r-packages-package.html#cb16-10" tabindex="-1"></a></span>
-<span id="cb16-11"><a href="r-packages-package.html#cb16-11" tabindex="-1"></a><span class="co"># Example: Convert weight from kilograms to grams</span></span>
-<span id="cb16-12"><a href="r-packages-package.html#cb16-12" tabindex="-1"></a><span class="fu">rb_weight</span>(<span class="dv">70</span>, <span class="at">from =</span> <span class="st">&quot;kg&quot;</span>, <span class="at">to =</span> <span class="st">&quot;g&quot;</span>)</span>
-<span id="cb16-13"><a href="r-packages-package.html#cb16-13" tabindex="-1"></a><span class="co">#&gt; [1] 70000</span></span>
-<span id="cb16-14"><a href="r-packages-package.html#cb16-14" tabindex="-1"></a></span>
-<span id="cb16-15"><a href="r-packages-package.html#cb16-15" tabindex="-1"></a><span class="co"># Example: Calculate number of moles</span></span>
-<span id="cb16-16"><a href="r-packages-package.html#cb16-16" tabindex="-1"></a><span class="fu">rb_mol</span>(<span class="dv">32</span>, <span class="dv">16</span>, <span class="at">massa =</span> <span class="st">&quot;g&quot;</span>, <span class="at">molaire_massa =</span> <span class="st">&quot;mol&quot;</span>)</span>
-<span id="cb16-17"><a href="r-packages-package.html#cb16-17" tabindex="-1"></a><span class="co">#&gt; [1] 2</span></span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="r-packages-package.html#cb21-1" tabindex="-1"></a><span class="fu">library</span>(package.rb)</span>
+<span id="cb21-2"><a href="r-packages-package.html#cb21-2" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="r-packages-package.html#cb21-3" tabindex="-1"></a><span class="co"># Example: Convert temperature from Celsius to Kelvin</span></span>
+<span id="cb21-4"><a href="r-packages-package.html#cb21-4" tabindex="-1"></a><span class="fu">rb_temperature</span>(<span class="dv">20</span>, <span class="at">from =</span> <span class="st">&quot;C&quot;</span>, <span class="at">to =</span> <span class="st">&quot;K&quot;</span>)</span>
+<span id="cb21-5"><a href="r-packages-package.html#cb21-5" tabindex="-1"></a><span class="co">#&gt; [1] 293.15</span></span>
+<span id="cb21-6"><a href="r-packages-package.html#cb21-6" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="r-packages-package.html#cb21-7" tabindex="-1"></a><span class="co"># Example: Convert length from centimeters to meters</span></span>
+<span id="cb21-8"><a href="r-packages-package.html#cb21-8" tabindex="-1"></a><span class="fu">rb_length</span>(<span class="dv">150</span>, <span class="at">from =</span> <span class="st">&quot;cm&quot;</span>, <span class="at">to =</span> <span class="st">&quot;m&quot;</span>)</span>
+<span id="cb21-9"><a href="r-packages-package.html#cb21-9" tabindex="-1"></a><span class="co">#&gt; [1] 1.5</span></span>
+<span id="cb21-10"><a href="r-packages-package.html#cb21-10" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="r-packages-package.html#cb21-11" tabindex="-1"></a><span class="co"># Example: Convert weight from kilograms to grams</span></span>
+<span id="cb21-12"><a href="r-packages-package.html#cb21-12" tabindex="-1"></a><span class="fu">rb_weight</span>(<span class="dv">70</span>, <span class="at">from =</span> <span class="st">&quot;kg&quot;</span>, <span class="at">to =</span> <span class="st">&quot;g&quot;</span>)</span>
+<span id="cb21-13"><a href="r-packages-package.html#cb21-13" tabindex="-1"></a><span class="co">#&gt; [1] 70000</span></span>
+<span id="cb21-14"><a href="r-packages-package.html#cb21-14" tabindex="-1"></a></span>
+<span id="cb21-15"><a href="r-packages-package.html#cb21-15" tabindex="-1"></a><span class="co"># Example: Calculate number of moles</span></span>
+<span id="cb21-16"><a href="r-packages-package.html#cb21-16" tabindex="-1"></a><span class="fu">rb_mol</span>(<span class="dv">32</span>, <span class="dv">16</span>, <span class="at">massa =</span> <span class="st">&quot;g&quot;</span>, <span class="at">molaire_massa =</span> <span class="st">&quot;mol&quot;</span>)</span>
+<span id="cb21-17"><a href="r-packages-package.html#cb21-17" tabindex="-1"></a><span class="co">#&gt; [1] 2</span></span></code></pre></div>
 
 </div>
 </div>

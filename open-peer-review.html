@@ -178,10 +178,23 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="personal-profile.html"><a href="personal-profile.html#experience"><i class="fa fa-check"></i>Experience</a></li>
 <li class="chapter" data-level="" data-path="personal-profile.html"><a href="personal-profile.html#additional-experience"><i class="fa fa-check"></i>Additional experience</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="survival-package.html"><a href="survival-package.html"><i class="fa fa-check"></i><b>2</b> Survival package</a></li>
+<li class="chapter" data-level="2" data-path="survival-package.html"><a href="survival-package.html"><i class="fa fa-check"></i><b>2</b> Survival package</a>
+<ul>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#introductie"><i class="fa fa-check"></i>Introductie</a></li>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#dataset"><i class="fa fa-check"></i>Dataset</a>
+<ul>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#metadata"><i class="fa fa-check"></i>Metadata</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#kaplan-meier"><i class="fa fa-check"></i>Kaplan-Meier</a>
+<ul>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#kaplan-meier-geslacht"><i class="fa fa-check"></i>Kaplan-Meier geslacht</a></li>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#kaplan-meier-leeftijd"><i class="fa fa-check"></i>Kaplan-Meier leeftijd</a></li>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#log-rank-test-op-rokers"><i class="fa fa-check"></i>Log-rank test op rokers</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="guerrilla-analytics-principles.html"><a href="guerrilla-analytics-principles.html"><i class="fa fa-check"></i><b>3</b> Guerrilla Analytics Principles</a>
 <ul>
-<li class="chapter" data-level="" data-path="guerrilla-analytics-principles.html"><a href="guerrilla-analytics-principles.html#introductie"><i class="fa fa-check"></i>Introductie</a></li>
+<li class="chapter" data-level="" data-path="guerrilla-analytics-principles.html"><a href="guerrilla-analytics-principles.html#introductie-1"><i class="fa fa-check"></i>Introductie</a></li>
 <li class="chapter" data-level="" data-path="guerrilla-analytics-principles.html"><a href="guerrilla-analytics-principles.html#portfolio-framework"><i class="fa fa-check"></i>Portfolio framework</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="c.-elegans-plate-experiment.html"><a href="c.-elegans-plate-experiment.html"><i class="fa fa-check"></i><b>4</b> C. elegans plate experiment</a>
@@ -212,7 +225,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="project-antimicrobiële-resistentie.html"><a href="project-antimicrobiële-resistentie.html"><i class="fa fa-check"></i><b>7</b> Project antimicrobiële resistentie</a>
 <ul>
-<li class="chapter" data-level="" data-path="project-antimicrobiële-resistentie.html"><a href="project-antimicrobiële-resistentie.html#introductie-1"><i class="fa fa-check"></i>Introductie</a></li>
+<li class="chapter" data-level="" data-path="project-antimicrobiële-resistentie.html"><a href="project-antimicrobiële-resistentie.html#introductie-2"><i class="fa fa-check"></i>Introductie</a></li>
 <li class="chapter" data-level="" data-path="project-antimicrobiële-resistentie.html"><a href="project-antimicrobiële-resistentie.html#antimicrobiële-resistentie"><i class="fa fa-check"></i>Antimicrobiële resistentie</a></li>
 <li class="chapter" data-level="" data-path="project-antimicrobiële-resistentie.html"><a href="project-antimicrobiële-resistentie.html#r-shiny-app"><i class="fa fa-check"></i>R shiny-app</a></li>
 </ul></li>
@@ -478,17 +491,17 @@ Op schaal van 1(very bad)-5(very good), zou ik het script een 4 geven op basis v
 <p>Bij het runnen van het script maar ik tegen aantal kleine errors tegen. Bij het inladen van de data miste er een pad in de set working directory funtie. Dit werd vervolgens verwezen naar de folder ‘les4’. Bij de chunk <strong>Demographics</strong> werden de kolommen <strong>Gender</strong> en <strong>BabyMusiClass</strong> niet gevonden als object voor het tellen in de dataframe <strong>df.wide</strong>. <strong>BabyMusiClass</strong> heb ik aangepast naar <strong>df.wide$ BabyMusiClass</strong>. De kolom <strong>Gender</strong> is character en niet een factor, waardoor het tellen moeilijk gaat. Dit heb ik aangepast naar <strong>table(df.wide$Gender)</strong>, zodat je in console de aantallen geslacht te zien krijgt.</p>
 <p>Op schaal van 1(very bad)-5(very good), zou ik het script een 4 geven op basis van reproduceerbaarheid. De codes die aangepast moesten worden, waren gemakkelijk op te lossen en begrijpelijk, zoals het verwijzen naar een pad/map. De visualisaties werden als png-bestanden geleverd en de vereiste librarys staan aan het begin van het markdown-bestand.</p>
 <p>Hieronder zie je een stukje van het script voor het genereren van een geom_density plot. Dit plot verdient een score van 5 voor reproduceerbaarheid.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="open-peer-review.html#cb15-1" tabindex="-1"></a><span class="fu">png</span>(<span class="st">&quot;attentionDensity.png&quot;</span>, <span class="at">units=</span><span class="st">&quot;in&quot;</span>, <span class="at">width=</span><span class="dv">5</span>, <span class="at">height=</span><span class="dv">5</span>, <span class="at">res=</span><span class="dv">300</span>)</span>
-<span id="cb15-2"><a href="open-peer-review.html#cb15-2" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="open-peer-review.html#cb15-3" tabindex="-1"></a>dens.perc <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(BabyAttShow.Prop,<span class="at">fill =</span> SongCond, <span class="at">linetype=</span>IntCond),..scaled..) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="sc">+</span><span class="fu">theme_classic</span>()<span class="sc">+</span></span>
-<span id="cb15-4"><a href="open-peer-review.html#cb15-4" tabindex="-1"></a>    <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;solid&quot;</span>, <span class="st">&quot;dashed&quot;</span>))<span class="sc">+</span></span>
-<span id="cb15-5"><a href="open-peer-review.html#cb15-5" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;plum4&quot;</span>,<span class="st">&quot;seagreen3&quot;</span>))<span class="sc">+</span></span>
-<span id="cb15-6"><a href="open-peer-review.html#cb15-6" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Proportion of epochs containing looks to show&quot;</span>)<span class="sc">+</span></span>
-<span id="cb15-7"><a href="open-peer-review.html#cb15-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Kernel density&quot;</span>)<span class="sc">+</span></span>
-<span id="cb15-8"><a href="open-peer-review.html#cb15-8" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb15-9"><a href="open-peer-review.html#cb15-9" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="open-peer-review.html#cb15-10" tabindex="-1"></a>dens.perc</span>
-<span id="cb15-11"><a href="open-peer-review.html#cb15-11" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="open-peer-review.html#cb20-1" tabindex="-1"></a><span class="fu">png</span>(<span class="st">&quot;attentionDensity.png&quot;</span>, <span class="at">units=</span><span class="st">&quot;in&quot;</span>, <span class="at">width=</span><span class="dv">5</span>, <span class="at">height=</span><span class="dv">5</span>, <span class="at">res=</span><span class="dv">300</span>)</span>
+<span id="cb20-2"><a href="open-peer-review.html#cb20-2" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="open-peer-review.html#cb20-3" tabindex="-1"></a>dens.perc <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(BabyAttShow.Prop,<span class="at">fill =</span> SongCond, <span class="at">linetype=</span>IntCond),..scaled..) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="sc">+</span><span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb20-4"><a href="open-peer-review.html#cb20-4" tabindex="-1"></a>    <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;solid&quot;</span>, <span class="st">&quot;dashed&quot;</span>))<span class="sc">+</span></span>
+<span id="cb20-5"><a href="open-peer-review.html#cb20-5" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;plum4&quot;</span>,<span class="st">&quot;seagreen3&quot;</span>))<span class="sc">+</span></span>
+<span id="cb20-6"><a href="open-peer-review.html#cb20-6" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Proportion of epochs containing looks to show&quot;</span>)<span class="sc">+</span></span>
+<span id="cb20-7"><a href="open-peer-review.html#cb20-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Kernel density&quot;</span>)<span class="sc">+</span></span>
+<span id="cb20-8"><a href="open-peer-review.html#cb20-8" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb20-9"><a href="open-peer-review.html#cb20-9" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="open-peer-review.html#cb20-10" tabindex="-1"></a>dens.perc</span>
+<span id="cb20-11"><a href="open-peer-review.html#cb20-11" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
 <p><img src="images/attentionDensity.png" width="60%" /></p>
 
 </div>
