@@ -26,3 +26,6 @@ gebruik
 functies
 voorbeeld
 project-antimicrobiële-resistentie
+introductie-1
+antimicrobiële-resistentie
+r-shiny-app
