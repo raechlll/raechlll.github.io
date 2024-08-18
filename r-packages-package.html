@@ -190,6 +190,8 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#kaplan-meier-geslacht"><i class="fa fa-check"></i>Kaplan-Meier geslacht</a></li>
 <li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#kaplan-meier-leeftijd"><i class="fa fa-check"></i>Kaplan-Meier leeftijd</a></li>
 <li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#log-rank-test-op-rokers"><i class="fa fa-check"></i>Log-rank test op rokers</a></li>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#cox-proportional-hazards-model"><i class="fa fa-check"></i>Cox Proportional Hazards Model</a></li>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#cox-proportional-hazards-model-controle"><i class="fa fa-check"></i>Cox Proportional Hazards Model controle</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="guerrilla-analytics-principles.html"><a href="guerrilla-analytics-principles.html"><i class="fa fa-check"></i><b>3</b> Guerrilla Analytics Principles</a>
@@ -339,23 +341,23 @@ Met <strong>package.rb</strong> kun je eenvoudig metingen omzetten tussen versch
 <div id="voorbeeld" class="section level2 unnumbered hasAnchor">
 <h2>Voorbeeld<a href="r-packages-package.html#voorbeeld" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Hier is een voorbeeld van hoe je <strong>package.rb</strong> kunt gebruiken om zowel metingen om te zetten als molberekeningen uit te voeren:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="r-packages-package.html#cb21-1" tabindex="-1"></a><span class="fu">library</span>(package.rb)</span>
-<span id="cb21-2"><a href="r-packages-package.html#cb21-2" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="r-packages-package.html#cb21-3" tabindex="-1"></a><span class="co"># Example: Convert temperature from Celsius to Kelvin</span></span>
-<span id="cb21-4"><a href="r-packages-package.html#cb21-4" tabindex="-1"></a><span class="fu">rb_temperature</span>(<span class="dv">20</span>, <span class="at">from =</span> <span class="st">&quot;C&quot;</span>, <span class="at">to =</span> <span class="st">&quot;K&quot;</span>)</span>
-<span id="cb21-5"><a href="r-packages-package.html#cb21-5" tabindex="-1"></a><span class="co">#&gt; [1] 293.15</span></span>
-<span id="cb21-6"><a href="r-packages-package.html#cb21-6" tabindex="-1"></a></span>
-<span id="cb21-7"><a href="r-packages-package.html#cb21-7" tabindex="-1"></a><span class="co"># Example: Convert length from centimeters to meters</span></span>
-<span id="cb21-8"><a href="r-packages-package.html#cb21-8" tabindex="-1"></a><span class="fu">rb_length</span>(<span class="dv">150</span>, <span class="at">from =</span> <span class="st">&quot;cm&quot;</span>, <span class="at">to =</span> <span class="st">&quot;m&quot;</span>)</span>
-<span id="cb21-9"><a href="r-packages-package.html#cb21-9" tabindex="-1"></a><span class="co">#&gt; [1] 1.5</span></span>
-<span id="cb21-10"><a href="r-packages-package.html#cb21-10" tabindex="-1"></a></span>
-<span id="cb21-11"><a href="r-packages-package.html#cb21-11" tabindex="-1"></a><span class="co"># Example: Convert weight from kilograms to grams</span></span>
-<span id="cb21-12"><a href="r-packages-package.html#cb21-12" tabindex="-1"></a><span class="fu">rb_weight</span>(<span class="dv">70</span>, <span class="at">from =</span> <span class="st">&quot;kg&quot;</span>, <span class="at">to =</span> <span class="st">&quot;g&quot;</span>)</span>
-<span id="cb21-13"><a href="r-packages-package.html#cb21-13" tabindex="-1"></a><span class="co">#&gt; [1] 70000</span></span>
-<span id="cb21-14"><a href="r-packages-package.html#cb21-14" tabindex="-1"></a></span>
-<span id="cb21-15"><a href="r-packages-package.html#cb21-15" tabindex="-1"></a><span class="co"># Example: Calculate number of moles</span></span>
-<span id="cb21-16"><a href="r-packages-package.html#cb21-16" tabindex="-1"></a><span class="fu">rb_mol</span>(<span class="dv">32</span>, <span class="dv">16</span>, <span class="at">massa =</span> <span class="st">&quot;g&quot;</span>, <span class="at">molaire_massa =</span> <span class="st">&quot;mol&quot;</span>)</span>
-<span id="cb21-17"><a href="r-packages-package.html#cb21-17" tabindex="-1"></a><span class="co">#&gt; [1] 2</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="r-packages-package.html#cb23-1" tabindex="-1"></a><span class="fu">library</span>(package.rb)</span>
+<span id="cb23-2"><a href="r-packages-package.html#cb23-2" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="r-packages-package.html#cb23-3" tabindex="-1"></a><span class="co"># Example: Convert temperature from Celsius to Kelvin</span></span>
+<span id="cb23-4"><a href="r-packages-package.html#cb23-4" tabindex="-1"></a><span class="fu">rb_temperature</span>(<span class="dv">20</span>, <span class="at">from =</span> <span class="st">&quot;C&quot;</span>, <span class="at">to =</span> <span class="st">&quot;K&quot;</span>)</span>
+<span id="cb23-5"><a href="r-packages-package.html#cb23-5" tabindex="-1"></a><span class="co">#&gt; [1] 293.15</span></span>
+<span id="cb23-6"><a href="r-packages-package.html#cb23-6" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="r-packages-package.html#cb23-7" tabindex="-1"></a><span class="co"># Example: Convert length from centimeters to meters</span></span>
+<span id="cb23-8"><a href="r-packages-package.html#cb23-8" tabindex="-1"></a><span class="fu">rb_length</span>(<span class="dv">150</span>, <span class="at">from =</span> <span class="st">&quot;cm&quot;</span>, <span class="at">to =</span> <span class="st">&quot;m&quot;</span>)</span>
+<span id="cb23-9"><a href="r-packages-package.html#cb23-9" tabindex="-1"></a><span class="co">#&gt; [1] 1.5</span></span>
+<span id="cb23-10"><a href="r-packages-package.html#cb23-10" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="r-packages-package.html#cb23-11" tabindex="-1"></a><span class="co"># Example: Convert weight from kilograms to grams</span></span>
+<span id="cb23-12"><a href="r-packages-package.html#cb23-12" tabindex="-1"></a><span class="fu">rb_weight</span>(<span class="dv">70</span>, <span class="at">from =</span> <span class="st">&quot;kg&quot;</span>, <span class="at">to =</span> <span class="st">&quot;g&quot;</span>)</span>
+<span id="cb23-13"><a href="r-packages-package.html#cb23-13" tabindex="-1"></a><span class="co">#&gt; [1] 70000</span></span>
+<span id="cb23-14"><a href="r-packages-package.html#cb23-14" tabindex="-1"></a></span>
+<span id="cb23-15"><a href="r-packages-package.html#cb23-15" tabindex="-1"></a><span class="co"># Example: Calculate number of moles</span></span>
+<span id="cb23-16"><a href="r-packages-package.html#cb23-16" tabindex="-1"></a><span class="fu">rb_mol</span>(<span class="dv">32</span>, <span class="dv">16</span>, <span class="at">massa =</span> <span class="st">&quot;g&quot;</span>, <span class="at">molaire_massa =</span> <span class="st">&quot;mol&quot;</span>)</span>
+<span id="cb23-17"><a href="r-packages-package.html#cb23-17" tabindex="-1"></a><span class="co">#&gt; [1] 2</span></span></code></pre></div>
 
 </div>
 </div>

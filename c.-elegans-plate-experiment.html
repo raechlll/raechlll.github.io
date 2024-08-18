@@ -190,6 +190,8 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#kaplan-meier-geslacht"><i class="fa fa-check"></i>Kaplan-Meier geslacht</a></li>
 <li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#kaplan-meier-leeftijd"><i class="fa fa-check"></i>Kaplan-Meier leeftijd</a></li>
 <li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#log-rank-test-op-rokers"><i class="fa fa-check"></i>Log-rank test op rokers</a></li>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#cox-proportional-hazards-model"><i class="fa fa-check"></i>Cox Proportional Hazards Model</a></li>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#cox-proportional-hazards-model-controle"><i class="fa fa-check"></i>Cox Proportional Hazards Model controle</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="guerrilla-analytics-principles.html"><a href="guerrilla-analytics-principles.html"><i class="fa fa-check"></i><b>3</b> Guerrilla Analytics Principles</a>
@@ -288,22 +290,22 @@ Interpreteer de resultaten van de analyse en benoem de resultaten met als doel d
 </div>
 <div id="scatterplot" class="section level2 unnumbered hasAnchor">
 <h2>Scatterplot<a href="c.-elegans-plate-experiment.html#scatterplot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="c.-elegans-plate-experiment.html#cb8-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb8-2"><a href="c.-elegans-plate-experiment.html#cb8-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb8-3"><a href="c.-elegans-plate-experiment.html#cb8-3" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb8-4"><a href="c.-elegans-plate-experiment.html#cb8-4" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb8-5"><a href="c.-elegans-plate-experiment.html#cb8-5" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="c.-elegans-plate-experiment.html#cb8-6" tabindex="-1"></a><span class="co"># Remove NA in rows of the columns</span></span>
-<span id="cb8-7"><a href="c.-elegans-plate-experiment.html#cb8-7" tabindex="-1"></a>CE_LIQ_FLOW_062_Tidydata <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(CE_LIQ_FLOW_062_Tidydata[, <span class="fu">c</span>(<span class="st">&quot;RawData&quot;</span>, <span class="st">&quot;compConcentration&quot;</span>, <span class="st">&quot;expType&quot;</span>, <span class="st">&quot;compName&quot;</span>)])</span>
-<span id="cb8-8"><a href="c.-elegans-plate-experiment.html#cb8-8" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="c.-elegans-plate-experiment.html#cb8-9" tabindex="-1"></a><span class="co"># Change the columns compName, compConcentration and expType to numeric or factor</span></span>
-<span id="cb8-10"><a href="c.-elegans-plate-experiment.html#cb8-10" tabindex="-1"></a>CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>expType <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>expType)</span>
-<span id="cb8-11"><a href="c.-elegans-plate-experiment.html#cb8-11" tabindex="-1"></a>CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>compConcentration <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>compConcentration)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="c.-elegans-plate-experiment.html#cb10-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb10-2"><a href="c.-elegans-plate-experiment.html#cb10-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb10-3"><a href="c.-elegans-plate-experiment.html#cb10-3" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb10-4"><a href="c.-elegans-plate-experiment.html#cb10-4" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb10-5"><a href="c.-elegans-plate-experiment.html#cb10-5" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="c.-elegans-plate-experiment.html#cb10-6" tabindex="-1"></a><span class="co"># Remove NA in rows of the columns</span></span>
+<span id="cb10-7"><a href="c.-elegans-plate-experiment.html#cb10-7" tabindex="-1"></a>CE_LIQ_FLOW_062_Tidydata <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(CE_LIQ_FLOW_062_Tidydata[, <span class="fu">c</span>(<span class="st">&quot;RawData&quot;</span>, <span class="st">&quot;compConcentration&quot;</span>, <span class="st">&quot;expType&quot;</span>, <span class="st">&quot;compName&quot;</span>)])</span>
+<span id="cb10-8"><a href="c.-elegans-plate-experiment.html#cb10-8" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="c.-elegans-plate-experiment.html#cb10-9" tabindex="-1"></a><span class="co"># Change the columns compName, compConcentration and expType to numeric or factor</span></span>
+<span id="cb10-10"><a href="c.-elegans-plate-experiment.html#cb10-10" tabindex="-1"></a>CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>expType <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>expType)</span>
+<span id="cb10-11"><a href="c.-elegans-plate-experiment.html#cb10-11" tabindex="-1"></a>CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>compConcentration <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>compConcentration)</span></code></pre></div>
 <pre><code>## Warning: NAs introduced by coercion</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="c.-elegans-plate-experiment.html#cb10-1" tabindex="-1"></a>CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>compName <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>compName)</span>
-<span id="cb10-2"><a href="c.-elegans-plate-experiment.html#cb10-2" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="c.-elegans-plate-experiment.html#cb10-3" tabindex="-1"></a><span class="co"># Inspect the data types of columns compName, expType and compConcentration </span></span>
-<span id="cb10-4"><a href="c.-elegans-plate-experiment.html#cb10-4" tabindex="-1"></a>CE_LIQ_FLOW_062_Tidydata <span class="sc">%&gt;%</span> <span class="fu">select</span>(compName, compConcentration, expType)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="c.-elegans-plate-experiment.html#cb12-1" tabindex="-1"></a>CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>compName <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>compName)</span>
+<span id="cb12-2"><a href="c.-elegans-plate-experiment.html#cb12-2" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="c.-elegans-plate-experiment.html#cb12-3" tabindex="-1"></a><span class="co"># Inspect the data types of columns compName, expType and compConcentration </span></span>
+<span id="cb12-4"><a href="c.-elegans-plate-experiment.html#cb12-4" tabindex="-1"></a>CE_LIQ_FLOW_062_Tidydata <span class="sc">%&gt;%</span> <span class="fu">select</span>(compName, compConcentration, expType)</span></code></pre></div>
 <pre><code>## # A tibble: 355 × 3
 ##    compName                   compConcentration expType   
 ##    &lt;fct&gt;                                  &lt;dbl&gt; &lt;fct&gt;     
@@ -319,11 +321,12 @@ Interpreteer de resultaten van de analyse en benoem de resultaten met als doel d
 ## 10 2,6-diisopropylnaphthalene              4.99 experiment
 ## # ℹ 345 more rows</code></pre>
 <p>Op basis van de beschrijving van het experiment zouden we verwachten dat de kolom RawData numeriek is. Voor compName zou het een karakter of een factor moeten zijn en voor compConcentration zou het numeriek moeten zijn. Echter, na het importeren van de data, komen de datatypes niet overeen met deze verwachtingen.</p>
-<pre><code>## Warning: Removed 1 row containing missing values or
-## values outside the scale range
+<pre><code>## Warning: Removed 1 row containing
+## missing values or values
+## outside the scale range
 ## (`geom_point()`).</code></pre>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-16"></span>
-<img src="_main_files/figure-html/unnamed-chunk-16-1.png" alt="Scatterplot voor CE_LIQ_FLOW_062_Tidydata waarbij de concentratie van de verbinding op de x-as staat in log10, aantal nakomelingen op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-19"></span>
+<img src="_main_files/figure-html/unnamed-chunk-19-1.png" alt="Scatterplot voor CE_LIQ_FLOW_062_Tidydata waarbij de concentratie van de verbinding op de x-as staat in log10, aantal nakomelingen op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes." width="672" />
 <p class="caption">
 Figure 4.1: Scatterplot voor CE_LIQ_FLOW_062_Tidydata waarbij de concentratie van de verbinding op de x-as staat in log10, aantal nakomelingen op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes.
 </p>
@@ -332,16 +335,16 @@ Figure 4.1: Scatterplot voor CE_LIQ_FLOW_062_Tidydata waarbij de concentratie va
 </div>
 <div id="normalized-data" class="section level2 unnumbered hasAnchor">
 <h2>Normalized data<a href="c.-elegans-plate-experiment.html#normalized-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="c.-elegans-plate-experiment.html#cb13-1" tabindex="-1"></a><span class="co"># Calculate mean value of controlNegative</span></span>
-<span id="cb13-2"><a href="c.-elegans-plate-experiment.html#cb13-2" tabindex="-1"></a>controlNegative <span class="ot">&lt;-</span> CE_LIQ_FLOW_062_Tidydata <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>expType <span class="sc">==</span> <span class="st">&quot;controlNegative&quot;</span>)</span>
-<span id="cb13-3"><a href="c.-elegans-plate-experiment.html#cb13-3" tabindex="-1"></a>controlNegative_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(controlNegative<span class="sc">$</span>RawData) </span>
-<span id="cb13-4"><a href="c.-elegans-plate-experiment.html#cb13-4" tabindex="-1"></a>controlNegative_mean</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="c.-elegans-plate-experiment.html#cb15-1" tabindex="-1"></a><span class="co"># Calculate mean value of controlNegative</span></span>
+<span id="cb15-2"><a href="c.-elegans-plate-experiment.html#cb15-2" tabindex="-1"></a>controlNegative <span class="ot">&lt;-</span> CE_LIQ_FLOW_062_Tidydata <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>expType <span class="sc">==</span> <span class="st">&quot;controlNegative&quot;</span>)</span>
+<span id="cb15-3"><a href="c.-elegans-plate-experiment.html#cb15-3" tabindex="-1"></a>controlNegative_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(controlNegative<span class="sc">$</span>RawData) </span>
+<span id="cb15-4"><a href="c.-elegans-plate-experiment.html#cb15-4" tabindex="-1"></a>controlNegative_mean</span></code></pre></div>
 <pre><code>## [1] 85.9</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="c.-elegans-plate-experiment.html#cb15-1" tabindex="-1"></a><span class="co"># Normalize data</span></span>
-<span id="cb15-2"><a href="c.-elegans-plate-experiment.html#cb15-2" tabindex="-1"></a>CE_LIQ_FLOW_062_Tidydata <span class="ot">&lt;-</span> CE_LIQ_FLOW_062_Tidydata <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">normalized =</span> CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>RawData <span class="sc">/</span> controlNegative_mean)</span>
-<span id="cb15-3"><a href="c.-elegans-plate-experiment.html#cb15-3" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="c.-elegans-plate-experiment.html#cb15-4" tabindex="-1"></a><span class="co"># Inspect the data types of columns RawData, compName, expType, compConcentration and normalized</span></span>
-<span id="cb15-5"><a href="c.-elegans-plate-experiment.html#cb15-5" tabindex="-1"></a>CE_LIQ_FLOW_062_Tidydata <span class="sc">%&gt;%</span> <span class="fu">select</span>(RawData, compName, compConcentration, expType, normalized)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="c.-elegans-plate-experiment.html#cb17-1" tabindex="-1"></a><span class="co"># Normalize data</span></span>
+<span id="cb17-2"><a href="c.-elegans-plate-experiment.html#cb17-2" tabindex="-1"></a>CE_LIQ_FLOW_062_Tidydata <span class="ot">&lt;-</span> CE_LIQ_FLOW_062_Tidydata <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">normalized =</span> CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>RawData <span class="sc">/</span> controlNegative_mean)</span>
+<span id="cb17-3"><a href="c.-elegans-plate-experiment.html#cb17-3" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="c.-elegans-plate-experiment.html#cb17-4" tabindex="-1"></a><span class="co"># Inspect the data types of columns RawData, compName, expType, compConcentration and normalized</span></span>
+<span id="cb17-5"><a href="c.-elegans-plate-experiment.html#cb17-5" tabindex="-1"></a>CE_LIQ_FLOW_062_Tidydata <span class="sc">%&gt;%</span> <span class="fu">select</span>(RawData, compName, compConcentration, expType, normalized)</span></code></pre></div>
 <pre><code>## # A tibble: 355 × 5
 ##    RawData compName                   compConcentration expType    normalized
 ##      &lt;dbl&gt; &lt;fct&gt;                                  &lt;dbl&gt; &lt;fct&gt;           &lt;dbl&gt;
@@ -356,18 +359,19 @@ Figure 4.1: Scatterplot voor CE_LIQ_FLOW_062_Tidydata waarbij de concentratie va
 ##  9      40 2,6-diisopropylnaphthalene              4.99 experiment      0.466
 ## 10      38 2,6-diisopropylnaphthalene              4.99 experiment      0.442
 ## # ℹ 345 more rows</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="c.-elegans-plate-experiment.html#cb17-1" tabindex="-1"></a><span class="co"># Calculate mean value of controlNegative</span></span>
-<span id="cb17-2"><a href="c.-elegans-plate-experiment.html#cb17-2" tabindex="-1"></a>controlNegative <span class="ot">&lt;-</span> CE_LIQ_FLOW_062_Tidydata <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>expType <span class="sc">==</span> <span class="st">&quot;controlNegative&quot;</span>)</span>
-<span id="cb17-3"><a href="c.-elegans-plate-experiment.html#cb17-3" tabindex="-1"></a>controlNegative_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(controlNegative<span class="sc">$</span>normalized) </span>
-<span id="cb17-4"><a href="c.-elegans-plate-experiment.html#cb17-4" tabindex="-1"></a>controlNegative_mean</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="c.-elegans-plate-experiment.html#cb19-1" tabindex="-1"></a><span class="co"># Calculate mean value of controlNegative</span></span>
+<span id="cb19-2"><a href="c.-elegans-plate-experiment.html#cb19-2" tabindex="-1"></a>controlNegative <span class="ot">&lt;-</span> CE_LIQ_FLOW_062_Tidydata <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CE_LIQ_FLOW_062_Tidydata<span class="sc">$</span>expType <span class="sc">==</span> <span class="st">&quot;controlNegative&quot;</span>)</span>
+<span id="cb19-3"><a href="c.-elegans-plate-experiment.html#cb19-3" tabindex="-1"></a>controlNegative_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(controlNegative<span class="sc">$</span>normalized) </span>
+<span id="cb19-4"><a href="c.-elegans-plate-experiment.html#cb19-4" tabindex="-1"></a>controlNegative_mean</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <div id="scatterplot-normalized-data" class="section level3 unnumbered hasAnchor">
 <h3>Scatterplot normalized data<a href="c.-elegans-plate-experiment.html#scatterplot-normalized-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<pre><code>## Warning: Removed 1 row containing missing values or
-## values outside the scale range
+<pre><code>## Warning: Removed 1 row containing
+## missing values or values
+## outside the scale range
 ## (`geom_point()`).</code></pre>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-18"></span>
-<img src="_main_files/figure-html/unnamed-chunk-18-1.png" alt="Scatterplot van genormaliseerde data voor CE.LIQ.FLOW.062_Tidydata.xlsx waarbij de concentratie van de verbinding op de x-as staat, de genormaliseerde ruwe data tellingen op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-21"></span>
+<img src="_main_files/figure-html/unnamed-chunk-21-1.png" alt="Scatterplot van genormaliseerde data voor CE.LIQ.FLOW.062_Tidydata.xlsx waarbij de concentratie van de verbinding op de x-as staat, de genormaliseerde ruwe data tellingen op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes." width="672" />
 <p class="caption">
 Figure 4.2: Scatterplot van genormaliseerde data voor CE.LIQ.FLOW.062_Tidydata.xlsx waarbij de concentratie van de verbinding op de x-as staat, de genormaliseerde ruwe data tellingen op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes.
 </p>

@@ -190,6 +190,8 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#kaplan-meier-geslacht"><i class="fa fa-check"></i>Kaplan-Meier geslacht</a></li>
 <li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#kaplan-meier-leeftijd"><i class="fa fa-check"></i>Kaplan-Meier leeftijd</a></li>
 <li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#log-rank-test-op-rokers"><i class="fa fa-check"></i>Log-rank test op rokers</a></li>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#cox-proportional-hazards-model"><i class="fa fa-check"></i>Cox Proportional Hazards Model</a></li>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#cox-proportional-hazards-model-controle"><i class="fa fa-check"></i>Cox Proportional Hazards Model controle</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="guerrilla-analytics-principles.html"><a href="guerrilla-analytics-principles.html"><i class="fa fa-check"></i><b>3</b> Guerrilla Analytics Principles</a>
@@ -262,29 +264,29 @@ div.csl-indent {
 <h2>Introductie<a href="guerrilla-analytics-principles.html#introductie-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Guerrilla Analytics Principles zijn richtlijnen die helpen om data snel en flexibel te analyseren en de workflow te verbeteren. In deze hoofdstuk gebruiken we het Guerrilla Analytics-framework, zoals uitgelegd door Enda Ridge. Dit framework biedt een praktische en hands-on benadering voor het opzetten van een datamanagementproces dat zowel individueel als in teamverband effectief is.
 Hieronder wordt een voorbeeld gegeven van de principe met DAUR-II assignments:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="guerrilla-analytics-principles.html#cb6-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb6-2"><a href="guerrilla-analytics-principles.html#cb6-2" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="guerrilla-analytics-principles.html#cb6-3" tabindex="-1"></a><span class="co"># Showing framework of RNA-sequence </span></span>
-<span id="cb6-4"><a href="guerrilla-analytics-principles.html#cb6-4" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;daur2/RNAseq&quot;</span>))</span>
-<span id="cb6-5"><a href="guerrilla-analytics-principles.html#cb6-5" tabindex="-1"></a><span class="co"># Showing framework of Metagenomics </span></span>
-<span id="cb6-6"><a href="guerrilla-analytics-principles.html#cb6-6" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;daur2/Metagenomics&quot;</span>))</span>
-<span id="cb6-7"><a href="guerrilla-analytics-principles.html#cb6-7" tabindex="-1"></a><span class="co"># Showing framework of ONECUT1 </span></span>
-<span id="cb6-8"><a href="guerrilla-analytics-principles.html#cb6-8" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;daur2/Eindopdracht&quot;</span>))</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="guerrilla-analytics-principles.html#cb8-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb8-2"><a href="guerrilla-analytics-principles.html#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="guerrilla-analytics-principles.html#cb8-3" tabindex="-1"></a><span class="co"># Showing framework of RNA-sequence </span></span>
+<span id="cb8-4"><a href="guerrilla-analytics-principles.html#cb8-4" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;daur2/RNAseq&quot;</span>))</span>
+<span id="cb8-5"><a href="guerrilla-analytics-principles.html#cb8-5" tabindex="-1"></a><span class="co"># Showing framework of Metagenomics </span></span>
+<span id="cb8-6"><a href="guerrilla-analytics-principles.html#cb8-6" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;daur2/Metagenomics&quot;</span>))</span>
+<span id="cb8-7"><a href="guerrilla-analytics-principles.html#cb8-7" tabindex="-1"></a><span class="co"># Showing framework of ONECUT1 </span></span>
+<span id="cb8-8"><a href="guerrilla-analytics-principles.html#cb8-8" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;daur2/Eindopdracht&quot;</span>))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-13"></span>
 <img src="images/RNA-tree.png" alt="Folder tree RNA-sequence. De folder tree van RNA-sequence uit DAUR2 is gebaseerd op de Guerrilla Analytics Principle." width="60%" />
 <p class="caption">
 Figure 3.1: Folder tree RNA-sequence. De folder tree van RNA-sequence uit DAUR2 is gebaseerd op de Guerrilla Analytics Principle.
 </p>
 </div>
 <br/><br/>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-14"></span>
 <img src="images/Meta-tree.png" alt="Folder tree Metagenomics. De folder tree van Metagenomics uit DAUR2 is gebaseerd op de Guerrilla Analytics Principle." width="60%" />
 <p class="caption">
 Figure 3.2: Folder tree Metagenomics. De folder tree van Metagenomics uit DAUR2 is gebaseerd op de Guerrilla Analytics Principle.
 </p>
 </div>
 <br/><br/>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-12"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-15"></span>
 <img src="images/Eind-tree.png" alt="Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht van DAUR2 is gebaseerd op de Guerrilla Analytics Principle." width="60%" />
 <p class="caption">
 Figure 3.3: Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht van DAUR2 is gebaseerd op de Guerrilla Analytics Principle.
@@ -416,7 +418,10 @@ Figure 3.3: Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht 
 ## │           ├── unnamed-chunk-12-1.png
 ## │           ├── unnamed-chunk-13-1.png
 ## │           ├── unnamed-chunk-15-1.png
+## │           ├── unnamed-chunk-16-1.png
 ## │           ├── unnamed-chunk-17-1.png
+## │           ├── unnamed-chunk-18-1.png
+## │           ├── unnamed-chunk-19-1.png
 ## │           ├── unnamed-chunk-21-1.png
 ## │           ├── unnamed-chunk-21-2.png
 ## │           ├── unnamed-chunk-22-1.png
@@ -425,6 +430,14 @@ Figure 3.3: Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht 
 ## │           ├── unnamed-chunk-25-2.png
 ## │           ├── unnamed-chunk-26-1.png
 ## │           ├── unnamed-chunk-26-2.png
+## │           ├── unnamed-chunk-27-1.png
+## │           ├── unnamed-chunk-27-2.png
+## │           ├── unnamed-chunk-28-1.png
+## │           ├── unnamed-chunk-28-2.png
+## │           ├── unnamed-chunk-29-1.png
+## │           ├── unnamed-chunk-29-2.png
+## │           ├── unnamed-chunk-30-1.png
+## │           ├── unnamed-chunk-30-2.png
 ## │           ├── unnamed-chunk-4-1.png
 ## │           ├── unnamed-chunk-5-1.png
 ## │           ├── unnamed-chunk-6-1.png
@@ -439,7 +452,10 @@ Figure 3.3: Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht 
 ## │       ├── unnamed-chunk-12-1.png
 ## │       ├── unnamed-chunk-13-1.png
 ## │       ├── unnamed-chunk-15-1.png
+## │       ├── unnamed-chunk-16-1.png
 ## │       ├── unnamed-chunk-17-1.png
+## │       ├── unnamed-chunk-18-1.png
+## │       ├── unnamed-chunk-19-1.png
 ## │       ├── unnamed-chunk-21-1.png
 ## │       ├── unnamed-chunk-21-2.png
 ## │       ├── unnamed-chunk-22-1.png
@@ -448,6 +464,14 @@ Figure 3.3: Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht 
 ## │       ├── unnamed-chunk-25-2.png
 ## │       ├── unnamed-chunk-26-1.png
 ## │       ├── unnamed-chunk-26-2.png
+## │       ├── unnamed-chunk-27-1.png
+## │       ├── unnamed-chunk-27-2.png
+## │       ├── unnamed-chunk-28-1.png
+## │       ├── unnamed-chunk-28-2.png
+## │       ├── unnamed-chunk-29-1.png
+## │       ├── unnamed-chunk-29-2.png
+## │       ├── unnamed-chunk-30-1.png
+## │       ├── unnamed-chunk-30-2.png
 ## │       ├── unnamed-chunk-4-1.png
 ## │       ├── unnamed-chunk-5-1.png
 ## │       ├── unnamed-chunk-6-1.png

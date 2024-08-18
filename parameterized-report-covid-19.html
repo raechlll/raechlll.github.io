@@ -190,6 +190,8 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#kaplan-meier-geslacht"><i class="fa fa-check"></i>Kaplan-Meier geslacht</a></li>
 <li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#kaplan-meier-leeftijd"><i class="fa fa-check"></i>Kaplan-Meier leeftijd</a></li>
 <li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#log-rank-test-op-rokers"><i class="fa fa-check"></i>Log-rank test op rokers</a></li>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#cox-proportional-hazards-model"><i class="fa fa-check"></i>Cox Proportional Hazards Model</a></li>
+<li class="chapter" data-level="" data-path="survival-package.html"><a href="survival-package.html#cox-proportional-hazards-model-controle"><i class="fa fa-check"></i>Cox Proportional Hazards Model controle</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="guerrilla-analytics-principles.html"><a href="guerrilla-analytics-principles.html"><i class="fa fa-check"></i><b>3</b> Guerrilla Analytics Principles</a>
@@ -280,14 +282,14 @@ div.csl-indent {
 <div id="lijngrafiek-nederland-frankrijk-en-spanje" class="section level2 unnumbered hasAnchor">
 <h2>Lijngrafiek Nederland, Frankrijk en Spanje<a href="parameterized-report-covid-19.html#lijngrafiek-nederland-frankrijk-en-spanje" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 Met de ECDC COVID-19 gegevens is er een visuele weergave van COVID-19 cases en deaths in geselecteerde landen en jaargetallen. De grafieken tonen het aantal cases en deaths per datum. Door gebruik te maken van parametrisatie in de R-code met <code>params$</code>, kan dit rapport eenvoudig aangepast worden aan specifieke interesses zonder dat je de onderliggende code hoeft te wijzigen.
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-26-1"></span>
-<img src="_main_files/figure-html/unnamed-chunk-26-1.png" alt="Lijngrafiek van COVID-19 data, waarbij de datum in jaar en maand op de x-as staat, de aantal cases op de y-as. Verschillende kleuren vertegenwoordigen geselecteerde landen Nederland, Frankrijk en Spanje." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-29-1"></span>
+<img src="_main_files/figure-html/unnamed-chunk-29-1.png" alt="Lijngrafiek van COVID-19 data, waarbij de datum in jaar en maand op de x-as staat, de aantal cases op de y-as. Verschillende kleuren vertegenwoordigen geselecteerde landen Nederland, Frankrijk en Spanje." width="672" />
 <p class="caption">
 Figure 8.1: Lijngrafiek van COVID-19 data, waarbij de datum in jaar en maand op de x-as staat, de aantal cases op de y-as. Verschillende kleuren vertegenwoordigen geselecteerde landen Nederland, Frankrijk en Spanje.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-26-2"></span>
-<img src="_main_files/figure-html/unnamed-chunk-26-2.png" alt="Lijngrafiek van COVID-19 data, waarbij de datum in jaar en maand op de x-as staat, de aantal cases op de y-as. Verschillende kleuren vertegenwoordigen geselecteerde landen Nederland, Frankrijk en Spanje." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-29-2"></span>
+<img src="_main_files/figure-html/unnamed-chunk-29-2.png" alt="Lijngrafiek van COVID-19 data, waarbij de datum in jaar en maand op de x-as staat, de aantal cases op de y-as. Verschillende kleuren vertegenwoordigen geselecteerde landen Nederland, Frankrijk en Spanje." width="672" />
 <p class="caption">
 Figure 8.2: Lijngrafiek van COVID-19 data, waarbij de datum in jaar en maand op de x-as staat, de aantal cases op de y-as. Verschillende kleuren vertegenwoordigen geselecteerde landen Nederland, Frankrijk en Spanje.
 </p>
@@ -296,14 +298,14 @@ Figure 8.2: Lijngrafiek van COVID-19 data, waarbij de datum in jaar en maand op 
 <div id="lijngrafiek-roemenië-noorwegen-en-italië" class="section level2 unnumbered hasAnchor">
 <h2>Lijngrafiek Roemenië, Noorwegen en Italië<a href="parameterized-report-covid-19.html#lijngrafiek-roemenië-noorwegen-en-italië" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 Om te controleren of de parametrisatie correct functioneert, kan je de waarden in de parameterlijst aanpassen. In dit voorbeeld worden de landen Roemenië, Noorwegen en Italië gebruikt en het jaar 2021.
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-27-1"></span>
-<img src="_main_files/figure-html/unnamed-chunk-27-1.png" alt="Lijngrafiek van COVID-19 data, waarbij de datum in jaar en maand op de x-as staat, de aantal cases op de y-as. Verschillende kleuren vertegenwoordigen geselecteerde landen Roemenië, Noorwegen en Italië." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-30-1"></span>
+<img src="_main_files/figure-html/unnamed-chunk-30-1.png" alt="Lijngrafiek van COVID-19 data, waarbij de datum in jaar en maand op de x-as staat, de aantal cases op de y-as. Verschillende kleuren vertegenwoordigen geselecteerde landen Roemenië, Noorwegen en Italië." width="672" />
 <p class="caption">
 Figure 8.3: Lijngrafiek van COVID-19 data, waarbij de datum in jaar en maand op de x-as staat, de aantal cases op de y-as. Verschillende kleuren vertegenwoordigen geselecteerde landen Roemenië, Noorwegen en Italië.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-27-2"></span>
-<img src="_main_files/figure-html/unnamed-chunk-27-2.png" alt="Lijngrafiek van COVID-19 data, waarbij de datum in jaar en maand op de x-as staat, de aantal cases op de y-as. Verschillende kleuren vertegenwoordigen geselecteerde landen Roemenië, Noorwegen en Italië." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-30-2"></span>
+<img src="_main_files/figure-html/unnamed-chunk-30-2.png" alt="Lijngrafiek van COVID-19 data, waarbij de datum in jaar en maand op de x-as staat, de aantal cases op de y-as. Verschillende kleuren vertegenwoordigen geselecteerde landen Roemenië, Noorwegen en Italië." width="672" />
 <p class="caption">
 Figure 8.4: Lijngrafiek van COVID-19 data, waarbij de datum in jaar en maand op de x-as staat, de aantal cases op de y-as. Verschillende kleuren vertegenwoordigen geselecteerde landen Roemenië, Noorwegen en Italië.
 </p>
